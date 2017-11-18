@@ -281,7 +281,7 @@ In the Attribute inspector of the Stack View you can see the axis, alignment, di
 
 Create a new project called LayoutApp3, implement the above example, in addition implement
 
-- Zero Top, Bottom, Leading and trailing edges on the StackView to the Safe Area
+- Zero Top, Bottom, Leading and trailing edge constraints on the StackView to the Safe Area
 
 - Distribute the views equally so that each views height is equal
 
