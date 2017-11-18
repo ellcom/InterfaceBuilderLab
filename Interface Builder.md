@@ -279,7 +279,7 @@ In the Attribute inspector of the Stack View you can see the axis, alignment, di
 
 **Task 3**
 
-Create a new project called LayoutApp3, implement the above example, in addition implement
+Create a new project called LayoutApp3, implement the above example, in addition figure out how to add the following:
 
 - Zero Top, Bottom, Leading and trailing edge constraints on the StackView to the Safe Area
 
