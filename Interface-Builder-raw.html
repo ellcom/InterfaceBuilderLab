@@ -90,7 +90,7 @@
 <p><img src='images/equal-width-constraint.png' alt='Equal Width Constraint' /></p>
 <p></p>
 <p>Take care to select both the Safe Area and GreenView is selected. Click Add 1 Constraint To Add the Constraint.</p>
-<p>To set the height as half the width of the safe area, repeat the width constraint but for Equal Heights, then in the right side drawer under the Attribute Inspector set the Multiplier to be 0.5</p>
+<p>To set the height as half the width of the safe area, repeat the width constraint but for Equal Heights, then in the right side drawer under the Attribute Inspector <img alt='' src='images/attribute-inspector.png'></img> set the Multiplier to be 0.5</p>
 <p></p>
 <p><img src='images/half-height-constraint.png' alt='Equal Width Constraint' /></p>
 <p></p>
@@ -171,7 +171,7 @@
 <p>Test to make sure that the project Works in Landscape and Portrait, and respect the safe area.</p>
 <p></p>
 <h3>Intrinsic Size</h3>
-<p>Sometimes the size of views isn&#39;t always known before runtime, for example, when downloading information from the internet.</p>
+<p>Sometimes the size of views isn&#39;t always known before runtime, for example, when downloading information from the internet or localised strings.</p>
 <p>This can be achieved using <em>Intrinsic Content Size</em>, the intrinsic content size is dynamic and will be calculated at runtime; this is an <em>implicit</em> constraint verses the <em>explicit</em> constraints described above.</p>
 <p>Not every view has intrinsic content sizing, such as the <code>UIView</code> class, however <code>UILabel</code> and <code>UIImageView</code> do, allowing for downloading of variable length strings and images of differing dimensions from the internet to be able to render correctly at runtime.</p>
 <p></p>
@@ -182,8 +182,83 @@
 <p></p>
 <p><img src='images/resistance-hugging.png' alt='Resistance &amp; Hugging' /></p>
 <p></p>
+<p>Both the intrinsic size and the priorities can be found in the size inspector <img alt='' src='images/size-inspector.png'></img> in the right side drawer.</p>
+<p></p>
+<p><img src='images/intrinsic-hugging-compression.png' alt='Right Draw under Size Inspector' /></p>
+<p></p>
+<p>Content compression resistance priority can be set to any value, however Xcode gives three suggested values:</p>
+<ul>
+<li>1000 being required priority</li>
+<li>750 being high priority</li>
+<li>250 being low priority</li>
+
+</ul>
+<p>The same is true for content hugging priorities.</p>
+<p></p>
+<p>An <strong>example</strong> use case could be a login screen typically comprising of two textfields and labels, one pair for the username and another for the password. The labels should start about 25 points from the leading edge and have some 10 points spacing before the textfield begins, then the textfield should end 25 points from the trailing edge. However, the textfields should be the same width.</p>
+<p></p>
+<p><img src='images/intrinsic-example-without.png' alt='Intrinsic without constraints' /></p>
+<p></p>
+<p>The following constraints allow us to achieve this:</p>
+<ol>
+<li>Username label leading = Safe area leading + 25</li>
+<li>Username textfield leading = Username label trailing  + 10</li>
+<li>Safe area trailing = Username textfield trailing  + 25</li>
+
+</ol>
+<p>To have the text of the label and textarea be level with each other, <code>alt</code> + <code>click</code> the label and text area and align to baseline.</p>
+<p>Repeat these steps for the password label and textfield.</p>
+<p>To ensure that the textfield have the same width, <code>alt</code> + <code>click</code> both textfields to select them both and give them an equal width constraint.</p>
+<p>Finish by adding relevant top constraints.</p>
+<p></p>
+<p><strong>Task 4</strong></p>
+<p>Complete the example above, test to make sure that the project Works in Landscape and Portrait, respect the safe area and works on the iPhone 8 Plus as well as iPhone SE</p>
+<p></p>
+<h2>Localisation</h2>
+<p>The localisation feature within Xcode allows an App to support other languages. When designing an App the first language used to design the interface is known as the base language, once the interface has been designed localisation work can begin. This is where you can add additional language support such as French, there is no limit on the number of languages you can support.</p>
+<p>To add localisation support to a project, head over the the project root in the left draw, click project in the editor and work on the info tab. Once here scroll down to the localisations header.</p>
+<p></p>
+<p><img src='images/local-default.png' alt='Localisations header' /></p>
+<p>Click on the plus arrow to add another language, In this example the French Language will be added, at the dialog click Finish.</p>
+<p>You now have another language supported. To start adding additional french words to your storyboard, to do this, enable localisation on the storyboard by opening the storyboard in the editor and ticking the french  option in the right drawer under the file tab.</p>
+<p></p>
+<p><img src='images/local-enable-french.png' alt='Enable French' /></p>
+<p></p>
+<p>In the left drawer on the storyboard file, a folder has opened up showing a Main.strings (French) file, click on this and change the username and password to their French versions.</p>
+<p>Username is &quot;Nom d&#39;utilisateur&quot; and password is &quot;Mot de passe&quot;.</p>
+<p>To test to make sure that the localisation work has been completed, <code>alt</code> + <code>click</code> on the simulator device on the toolbar and change the application language to French.</p>
+<p></p>
+<p><img src='images/local-alt-click.png' alt='Change Language' /></p>
+<p></p>
+<p>If the intrinsic size has set up the correctly, the label and textfield widths will automatically change to accommodate the content.</p>
+<p></p>
+<p><strong>Task 5</strong> </p>
+<p>Create a login screen consisting of:</p>
+<ul>
+<li>Username Label</li>
+<li>Password Label</li>
+<li>Username Textfield</li>
+<li>Password Textfield</li>
+<li>Login Button</li>
+<li>View with all the above inside</li>
+
+</ul>
+<p></p>
+<p><img src='images/content-size-constraint.png' alt='Task 5' /></p>
+<p></p>
+<p>The textfields should be of equal width, have relevant constraints and be of a desired width of 200 points, the login button should be centred, the labels should expand based on their content size.</p>
+<p>The View should be centred vertically and horizontally with a constraint saying it must not be any closer then  30 points to the trailing edge of the superview. This means that width of the textfield will be of lesser priority than the trailing edge constraint.</p>
+<p>Add French localisation to the storyboard using &quot;s&#39;identifier&quot; for login. Finish by testing the App in two iPhone sizes and both languages.</p>
+<p></p>
+<p>Example of the App running on the iPhone SE</p>
+<p><img src='images/task4-se-fr.png' alt='task4-8p-en' /><img src='images/task4-se-en.png' alt='task4-8p-en' /> </p>
+<p></p>
+<p>Example of the App running on the iPhone 8 plus</p>
+<p><img src='images/task4-8p-fr.png' alt='task4-8p-en' /><img src='images/task4-8p-en.png' alt='task4-8p-en' /></p>
 <p></p>
 <p></p>
+
+
 <p></p>
 </body>
 </html>
