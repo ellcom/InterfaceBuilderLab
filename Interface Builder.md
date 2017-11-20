@@ -22,9 +22,9 @@ One of the notable advantages of Storyboards is *Segues*, Segues allow for linki
 
 ## Views
 
-When creating an Interface in Interface Builder, most of the time a View will be used. A View inherits or directly implements the UIView Class. A View on the Interface Builder is a rectangular area the handles drawing and touch/gesture events.
+When creating an Interface in Interface Builder, most of the time a View will be used. A View inherits or directly implements the `UIView` Class. A View on the Interface Builder is a rectangular area the handles drawing and touch/gesture events.
 
-Most Objects in the Object library inherit from UIView, e.g. Button, TextField, Slider, ...
+Most Objects in the Object library inherit from`UIView`, e.g. Button, TextField, Slider, ...
 
 Views can and are typically nested, i.e. a View sits inside another View. The relationship between nested Views are described as a SuperView and a SubView, the Super being the outer and the Sub being the Inner.
 
@@ -296,4 +296,34 @@ Create a new project called LayoutApp3, implement the above example, in addition
 
 
 Test to make sure that the project Works in Landscape and Portrait, and respect the safe area.
+
+
+
+### Intrinsic Size
+
+Sometimes the size of views isn't always known before runtime, for example, when downloading infomation from the internet.
+
+This can be achieved using *Intrinsic Content Size*, the intrinsic content size is dynamic and will be calculated at runtime; this is an *implicit* constraint verses the *explicit* constraints described above.
+
+Not every view has intrinsic content sizing, such as the `UIView` class, however `UILabel` and `UIImageView` do, allowing for downloading of variable length strings and images of differing dimensions from the internet to be able to render correctly at runtime.
+
+
+
+### Content Hugging & Content Compression Resistance Priority
+
+Intrisinc content sizes can conflict with other Intrisinc content size views, for example, multiple `UILabel` instances stacked horizontally. In this scenario, which label gets "Priorty".
+
+A views priority can be described two ways, first by using the **Content Hugging** priority, which says that a view may not grow and is "Hugged". With a higher priority, the more resistance to growth beyond the intrinsic size is applied to the view.
+
+The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrisic size class. The higher the priority, the more the view will resist being compressed or "made smaller" than its intristinc size.
+
+
+
+![Resistance & Hugging](images/resistance-hugging.png)
+
+
+
+
+
+
 
