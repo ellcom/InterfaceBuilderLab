@@ -6,7 +6,7 @@ Interface builder is the tool within Xcode for creating a User Interface via a G
 
 Interface Builder has been around since 1988, in 2008 a special iPhone version of Interface Builder was released to allow for the building iPhone interfaces. As of Xcode 4 Interface Builder became integrated into Xcode, before this Interface Builder had been its own application.
 
-Sometimes Interface Buildier will be refered to as IB. In some cases you may find Interface Builder files called .xib or .nib, this stands for NeXT interterface builder dating back to the NeXTSTEP company Steve Jobs created after leaving Apple.
+Sometimes Interface Builder will be refered to as IB. In some cases you may find Interface Builder files called .xib or .nib, this stands for NeXT interface builder dating back to the NeXTSTEP company Steve Jobs created after leaving Apple.
 
 Interface Builder had been used by Tim Berners-Lee to create the WorldWideWeb Browser back in 1990.
 
@@ -146,7 +146,7 @@ When the device is rotated to landscape, the button will still be in the middle 
 
 A height or width can be set to relate to another views height or width, to do this both views need to be selected in the left toolbar and a constraint applied in the Constraints Menu.
 
-In this example I have a View inside a the root View, the Subview is called GeeenView
+In this example I have a View inside a the root View, the Subview is called `GreenView`
 
 
 
@@ -301,7 +301,7 @@ Test to make sure that the project Works in Landscape and Portrait, and respect 
 
 ### Intrinsic Size
 
-Sometimes the size of views isn't always known before runtime, for example, when downloading infomation from the internet.
+Sometimes the size of views isn't always known before runtime, for example, when downloading information from the internet.
 
 This can be achieved using *Intrinsic Content Size*, the intrinsic content size is dynamic and will be calculated at runtime; this is an *implicit* constraint verses the *explicit* constraints described above.
 
@@ -311,11 +311,11 @@ Not every view has intrinsic content sizing, such as the `UIView` class, however
 
 ### Content Hugging & Content Compression Resistance Priority
 
-Intrisinc content sizes can conflict with other Intrisinc content size views, for example, multiple `UILabel` instances stacked horizontally. In this scenario, which label gets "Priorty".
+Intrinsic content sizes can conflict with other intrinsic content size views, for example, multiple `UILabel` instances stacked horizontally. In this scenario, which label gets "Priority".
 
 A views priority can be described two ways, first by using the **Content Hugging** priority, which says that a view may not grow and is "Hugged". With a higher priority, the more resistance to growth beyond the intrinsic size is applied to the view.
 
-The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrisic size class. The higher the priority, the more the view will resist being compressed or "made smaller" than its intristinc size.
+The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrinsic size class. The higher the priority, the more the view will resist being compressed or "made smaller" than its intrinsic size.
 
 
 
