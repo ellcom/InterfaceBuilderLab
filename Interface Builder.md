@@ -315,7 +315,7 @@ Intrinsic content sizes can conflict with other intrinsic content size views, fo
 
 A views priority can be described two ways, first by using the **Content Hugging** priority, which says that a view may not grow and is "Hugged". With a higher priority, the more resistance to growth beyond the intrinsic size is applied to the view.
 
-The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrinsic size class. The higher the priority, the more the view will resist being compressed or "made smaller" than its intrinsic size.
+The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrinsic size. The higher the priority, the more the view will resist being compressed or "made smaller" than its intrinsic size.
 
 
 
@@ -375,7 +375,7 @@ Complete the example above, test to make sure that the project Works in Landscap
 
 The localisation feature within Xcode allows an App to support other languages. When designing an App the first language used to design the interface is known as the base language, once the interface has been designed localisation work can begin. This is where you can add additional language support such as French, there is no limit on the number of languages you can support.
 
-To add localisation support to a project, head over the the project root in the left draw, click project in the editor and work on the info tab. Once here scroll down to the localisations header.
+To add localisation support to a project, head over to the project root in the left draw, click project in the editor and work on the info tab. Once here scroll down to the localisations header.
 
 
 
