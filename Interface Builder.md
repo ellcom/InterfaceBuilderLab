@@ -46,7 +46,7 @@ Within Interface Builder, the toolbar at the bottom of the editor is where the A
 
 
 
-On the left side of the toolbar the device that the editor is currently displaying on the editor, you can change the device to see how the interface will look for different devices. Clicking on the device brings up the options for device and Orientation of the device.
+On the left side of the toolbar is the device that the editor is currently displaying, you can change the device to see how the interface will look. Clicking on the current device brings up the options for changing device and Orientation of the device.
 
 
 
