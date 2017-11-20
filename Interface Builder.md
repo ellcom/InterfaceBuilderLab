@@ -106,7 +106,7 @@ To further illustrate, here is a View Controller root View with a background of 
 
 
 
-The Subview has a black background, here is the the layout shown in Portrait
+The Subview has a black background, here is the layout shown in Portrait
 
 
 
