@@ -1,8 +1,10 @@
-# Interface Builder
+# Week 9 Lab
+
+Comp327 week 9 lab for week commencing 20 November 2017.
+
+## Interface Builder
 
 Interface builder is the tool within Xcode for creating a User Interface via a GUI. 
-
-## History
 
 Interface Builder has been around since 1988, in 2008 a special iPhone version of Interface Builder was released to allow for the building iPhone interfaces. As of Xcode 4 Interface Builder became integrated into Xcode, before this Interface Builder had been its own application.
 
@@ -68,7 +70,7 @@ On the left side of the toolbar, a collection of menu's and buttons can be found
 
 ###Height and Position Constraints
 
-Starting with Height and Position constrains or "A new layout constraint". 
+Starting with Height and Position constraints or "A new layout constraint". 
 
 
 
@@ -106,7 +108,7 @@ To further illustrate, here is a View Controller root View with a background of 
 
 
 
-The Subview has a black background, here is the layout shown in Portrait
+The sub View has a black background, here is the layout shown in Portrait
 
 
 
@@ -114,7 +116,7 @@ The Subview has a black background, here is the layout shown in Portrait
 
 
 
-As shown, the green colour around the edges of the back Subview indicates the Safe Layout Guide, here it the same View in Landscape
+As shown, the green colour around the edges of the back sub View indicates the Safe Layout Guide, here is the same View in Landscape
 
 
 
@@ -146,7 +148,7 @@ When the device is rotated to landscape, the button will still be in the middle 
 
 A height or width can be set to relate to another views height or width, to do this both views need to be selected in the left toolbar and a constraint applied in the Constraints Menu.
 
-In this example I have a View inside a the root View, the Subview is called `GreenView`
+For example, a View inside a root View where the sub view is called `GreenView`
 
 
 
@@ -154,7 +156,7 @@ In this example I have a View inside a the root View, the Subview is called `Gre
 
 
 
-In the example the GreenView will have the same width as the root View and half the height of the root View. The View will be zero aligned to the top and left Safe Area.
+In the example the `GreenView` will have the same width as the root View and half the height of the root View. The `GreenView` will be zero aligned to the top and trailing Safe Area.
 
 
 
@@ -162,9 +164,9 @@ In the example the GreenView will have the same width as the root View and half 
 
 
 
-Take care to select both the Safe Area and GreenView is selected. Click Add 1 Constraint To Add the Constraint.
+Take care to select both the Safe Area and `GreenView` then click "Add 1 Constraint" to add the Constraint.
 
-To set the height as half the width of the safe area, repeat the width constraint but for Equal Heights, then in the right side drawer under the Attribute Inspector ![][attribute-inspector] set the Multiplier to be 0.5
+To set the height as half the width of the safe area, repeat the width constraint but for Equal Heights, then in the right side drawer under the Attribute Inspector ![][attribute-inspector] set the *Multiplier* to be `0.5`.
 
 
 
@@ -174,7 +176,7 @@ To set the height as half the width of the safe area, repeat the width constrain
 
 **Task 1**
 
-Create a new Projected Called LayoutApp1, implement the above example about applying all constraints However have your view aligned to the bottom of the safe area. Test to make sure that the project Works in Landscape and Portrait.
+Create a new Project called LayoutApp1, implement the above example applying all constraints, however have the `GrenView` aligned to the bottom of the Safe Area. Test to make sure that the project works in landscape and portrait.
 
 
 
@@ -186,11 +188,11 @@ Example of the completed view:
 
 ### Size Class Variation
 
-In some cases constraints may differ between size classes, for example in landscape a constraint may not be needed or should differ from than in landscape.
+In some cases constraints may differ between size classes, for example in landscape a constraint may not be needed or should differ from than in portrait.
 
-In this example, we shall work with the last task. In Portrait the height should be equal to half, however in Landscape the height should be equal.
+In this example, we shall work with the last task. In portrait the height should be equal to half, however in landscape the height should be equal.
 
-This can be achieved by adding a size class variation to the Equal Height Constraint. In the left side toolbar click on the `GreenView.height = 0.5 × Safe Area.height` constraint, in the right side drawer under the Attribute inspector the constraint is *Installed*, unticking this option uninstalls the constraint. To the left side is a `+` button, Clicking on the button brings up the option to add a Variation based on the height, width and Gamut. Selecting Width: Any, Height: Regular will introduce a variation. 
+This can be achieved by adding a size class variation to the Equal Height Constraint. In the left side editor drawer click on the `GreenView.height = 0.5 × Safe Area.height` constraint, in the right side drawer under the Attribute inspector notice that the constraint is *Installed*, unticking this option uninstalls the constraint. To the left is a `+` button, clicking on the button brings up the option to add a Variation based on the height, width and Gamut. Selecting Width: Any, Height: Regular will introduce the variation we need. 
 
 
 
@@ -198,11 +200,11 @@ This can be achieved by adding a size class variation to the Equal Height Constr
 
 
 
-Notice the constraint has been uninstalled and Installed for hR, this means the constraint will any apply to regular heights.
+Notice the constraint has been uninstalled and Installed for hR, this means the constraint will any apply to regular heights only.
 
-On the iPhone, All devices in Portrait have the Size class of hR wC and in landscape hC wC.
+On the iPhone all devices in Portrait have the Size class of hR wC and in landscape hC wC.
 
-Setting the height to be equal in landscape can be achieved by having two constraints with variations.
+Setting the height of `GreenView` to be equal to the superview in landscape can be achieved by having two constraints with different variations.
 
 
 
@@ -212,7 +214,7 @@ Setting the height to be equal in landscape can be achieved by having two constr
 
 **Task 2** 
 
-Create a new project called LayoutApp2, implement the above example about applying all constraints However in landscape have the GreenView width to be half Safe Area and in portrait have the width to be equal. The GreenView should be Zero Aligned on the top, left and bottom to the safe area. Test to make sure that the project Works in Landscape and Portrait.
+Create a new project called LayoutApp2, implement the above example about applying all constraints However in landscape have the `GreenView` width to be half Safe Area width and in portrait have the widths be equal. The `GreenView` should be Zero Aligned on the top, leading and bottom to the safe area. Test to make sure that the project works in landscape and portrait.
 
 
 
@@ -226,7 +228,7 @@ Stack views allows for creating more complicated layouts quicker and easier.
 
 
 
-Consider the above layout, to draw this layout using Alignment and Equal Height Constraints would require the following constraints
+Consider the above layout, to draw this layout using Alignment and Equal Height Constraints would require the following:
 
 1. Equal Heights for each view
 2. A view with a relative height to the Safe Area
@@ -235,7 +237,7 @@ Consider the above layout, to draw this layout using Alignment and Equal Height 
 5. Vertical Space Constraints for each view
 6. any probably some more...
 
-If after creating these constraints another view needed to be added to the layout, it would not be simple, this is where Stack Views come in.
+If after creating these constraints another View needed to be added to the layout, it would not be simple; this is where Stack Views come in.
 
 Stack Views have the following properties:
 
@@ -249,7 +251,7 @@ How the views within the Stack View are *Stacked*, this can be horizontally (sid
 
 **Spacing**
 
-How much space is between each of the views
+How much space is between each of the Views
 
 **Distribution**
 
@@ -257,7 +259,7 @@ How each View will fill the available space within the Stack View
 
 
 
-To create the above example, three Views will be placed onto a root view, theses sub Views are called GreenView, RedView and BlueView. 
+To create the above example, three Views will be placed onto a root view, theses sub Views are called `GreenView`, `RedView` and `BlueView`. 
 
 
 
@@ -265,7 +267,7 @@ To create the above example, three Views will be placed onto a root view, theses
 
 
 
-To place the views within a Stack View, on the bottom toolbar click on the circled button in the image above, the three views are now sub Views of a Stack View.
+To place the Views within a Stack View, select them using `cmd` + `click` and click on the Stack View option in the bottom toolbar (circled in the image above), the three Views are now sub Views of a Stack View.
 
 
 
@@ -281,11 +283,11 @@ In the Attribute inspector of the Stack View you can see the axis, alignment, di
 
 Create a new project called LayoutApp3, implement the above example, in addition figure out how to add the following:
 
-- Zero Top, Bottom, Leading and trailing edge constraints on the StackView to the Safe Area
+- Zero Top, Bottom, Leading and Trailing edge constraints on the StackView to the Safe Area
 
-- Distribute the views equally so that each views height is equal
+- Distribute the Views equally so that each View has equal height
 
-- Introduce some spacing between the views
+- Introduce 10 point spacing between the Views
 
 - Add a Variation on the Axis so that in landscape the views are Horizontal
 
@@ -295,13 +297,13 @@ Create a new project called LayoutApp3, implement the above example, in addition
 
 
 
-Test to make sure that the project Works in Landscape and Portrait, and respect the safe area.
+Test to make sure that the project works in landscape and portrait, and respects the Safe Area.
 
 
 
 ### Intrinsic Size
 
-Sometimes the size of views isn't always known before runtime, for example, when downloading information from the internet or localised strings.
+Sometimes the size of Views isn't always known before runtime, for example, when downloading information from the internet or localised strings.
 
 This can be achieved using *Intrinsic Content Size*, the intrinsic content size is dynamic and will be calculated at runtime; this is an *implicit* constraint verses the *explicit* constraints described above.
 
@@ -315,7 +317,7 @@ Intrinsic content sizes can conflict with other intrinsic content size views, fo
 
 A views priority can be described two ways, first by using the **Content Hugging** priority, which says that a view may not grow and is "Hugged". With a higher priority, the more resistance to growth beyond the intrinsic size is applied to the view.
 
-The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrinsic size. The higher the priority, the more the view will resist being compressed or "made smaller" than its intrinsic size.
+The second, **Compression Resistance** priority which describes how the view will "Resist" being compressed by other views intrinsic size. The higher the priority, the more the view will resist being compressed or "made smaller" than its intrinsic size and express a desire to grow.
 
 
 
@@ -331,7 +333,7 @@ Both the intrinsic size and the priorities can be found in the size inspector ![
 
 
 
-Content compression resistance priority can be set to any value, however Xcode gives three suggested values:
+The content compression resistance priority can be set to any value, however Xcode gives three suggested values:
 
 - 1000 being required priority
 - 750 being high priority
@@ -341,7 +343,7 @@ The same is true for content hugging priorities.
 
 
 
-An **example** use case could be a login screen typically comprising of two textfields and labels, one pair for the username and another for the password. The labels should start about 25 points from the leading edge and have some 10 points spacing before the textfield begins, then the textfield should end 25 points from the trailing edge. However, the textfields should be the same width.
+An **example** use case could be a login screen that would typically comprising of two textfields and labels, one pair for the username and another for the password. The labels should start about 25 points from the leading edge and have some 10 points spacing before the textfield begins, then the textfield should end 25 points from the trailing edge. However, the textfields should be the same width.
 
 
 
@@ -367,23 +369,23 @@ Finish by adding relevant top constraints.
 
 **Task 4**
 
-Complete the example above, test to make sure that the project Works in Landscape and Portrait, respect the safe area and works on the iPhone 8 Plus as well as iPhone SE
+Complete the example above, test to make sure that the project works in landscape and portrait, respects the Safe Area and displays correctly on the iPhone 8 Plus and iPhone SE.
 
 
 
 ## Localisation
 
-The localisation feature within Xcode allows an App to support other languages. When designing an App the first language used to design the interface is known as the base language, once the interface has been designed localisation work can begin. This is where you can add additional language support such as French, there is no limit on the number of languages you can support.
+The localisation feature within Xcode allows an App to support other languages. When designing an App the first language used to design the interface is known as the base language, once the interface has been designed localisation work typically starts. This is where you can add additional language support such as French, there is no limit on the number of languages you can support.
 
-To add localisation support to a project, head over to the project root in the left draw, click project in the editor and work on the info tab. Once here scroll down to the localisations header.
+To add localisation support to a project, head over to the project root in the left drawer, click on the project in the editor and select the info tab. Once here scroll down to the localisations header.
 
 
 
 ![Localisations header](images/local-default.png)
 
-Click on the plus arrow to add another language, In this example the French Language will be added, at the dialog click Finish.
+Click on the `+` button to add another language, In this example the French Language will be added. At the next dialog click Finish.
 
-You now have another language supported. To start adding additional french words to your storyboard, to do this, enable localisation on the storyboard by opening the storyboard in the editor and ticking the french  option in the right drawer under the file tab.
+You now have another language supported but not translated. To start adding additional french words to your storyboard, enable localisation on the storyboard by opening the storyboard in the editor and ticking the french option in the right drawer under the file tab ![File tab](images/file-button.png).
 
 
 
@@ -409,6 +411,8 @@ If the intrinsic size has set up the correctly, the label and textfield widths w
 
 **Task 5** 
 
+> Task 5 is the optional extra step that’s worth an extra point when this is submitted as part of the portfolio
+
 Create a login screen consisting of:
 
 - Username Label
@@ -424,11 +428,11 @@ Create a login screen consisting of:
 
 
 
-The textfields should be of equal width, have relevant constraints and be of a desired width of 200 points, the login button should be centred, the labels should expand based on their content size.
+The textfields should be of equal width, have relevant constraints and be of a **desired** width of 200 points, the login button should be centred, the labels should expand based on their content size and have baseline alignment with their paired textfield.
 
-The View should be centred vertically and horizontally with a constraint saying it must not be any closer then  30 points to the trailing edge of the superview. This means that width of the textfield will be of lesser priority than the trailing edge constraint.
+The View should be centred vertically and horizontally with a constraint saying it **must not** be any closer than 30 points to the trailing edge of the superview. This means that width of the textfield will be of lesser priority than the trailing edge constraint. The height should be automatically set by using 10 point top constraints between all the items inside the view.
 
-Add French localisation to the storyboard using "s'identifier" for login. Finish by testing the App in two iPhone sizes and both languages.
+Add French localisation to the storyboard using the French word "s'identifier" for login. Finish by testing the App in two iPhone sizes and both languages.
 
 
 
