@@ -407,7 +407,7 @@ To test to make sure that the localisation work has been completed, `alt` + `cli
 
 If the intrinsic size has set up the correctly, the label and textfield widths will automatically change to accommodate the content.
 
-Hint: If you create additional objects on the storyboard after you have generated the localized file, those new objects wont appear. You can Regenerate the file in the left hand drawer, change it from Localisable Strings to Interface Builedr Storyboard and then back to Localizable Strings.
+Hint: If you create additional objects on the storyboard after you have generated the localized file, those new objects won't appear. You can regenerate the file in the left hand drawer, changing it from "Localisable Strings" to "Interface Builedr Storyboard" and back to "Localizable Strings".
 
 **Task 5** 
 
